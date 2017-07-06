@@ -4,6 +4,7 @@ var bodyParser=require('body-parser')
 var MongoClient = require('mongodb').MongoClient
 var ObjectId= require('mongodb').ObjectID
 var url = 'mongodb://anspd:asdf1234qwe@ds030500.mlab.com:30500/tododata';
+var port=process.env.PORT || 3000
 
 app.use(bodyParser.urlencoded({extended: true}))
 
@@ -14,7 +15,7 @@ MongoClient.connect(url, function(err, database) {
   console.log("Connected successfully to database server")
  })
 
- app.listen(3000, function() {
+ app.listen(port, function() {
    console.log('listening on 3000')
 })
 
